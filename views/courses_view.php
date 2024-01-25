@@ -107,6 +107,10 @@ $timestamp = strtotime($fecha_actual);
                         </div>
                     </section>
                 </div>
+            <?php else : ?>
+                <div class="col md-10">
+                    <p style="text-align: center;">El usuario no tiene un cliente asignado</p>
+                </div>
             <?php endif; ?>
         </div>
 
