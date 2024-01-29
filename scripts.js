@@ -131,14 +131,17 @@ function actualizarDatos() {
 }
 
 document.getElementById("editForm").addEventListener("submit", function (e) {
+  e.preventDefault();
   var idCurso = document.getElementById("cursoId").value;
   // Verificar si el botón clickeado es "Cancelar" o "Salir"
   e.preventDefault(); // Evitar el envío por defecto del formulario
-
+  console.log(validacionCampos());
   if (validacionCampos()) {
     if (idCurso) {
+      console.log("entre oco");
       actualizarDatos();
     } else {
+      console.log("entre aqui");
       crearDatos();
     }
   }
@@ -250,17 +253,6 @@ function crearDatos() {
 span.onclick = function () {
   modal.style.display = "none";
 };
-
-document.getElementById("editForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Evitar el env赤o por defecto del formulario
-
-  var idCurso = document.getElementById("cursoId").value;
-  if (idCurso) {
-    //  actualizarDatos();
-  } else {
-    //   crearDatos();
-  }
-});
 
 function validacionCampos() {
   var fechaInicio = document.getElementById("fechaInicio").value;
